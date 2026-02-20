@@ -1,0 +1,170 @@
+{
+  "main": {
+    "id": "66daf441c289688f",
+    "type": "split",
+    "children": [
+      {
+        "id": "5bf0b5995199b077",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Interests/Lemma/Economics/IGNOU/Data/MEC101/Block - 1.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c797aeb32af6f097",
+    "type": "split",
+    "children": [
+      {
+        "id": "84f88ea831af77b7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5167b3e7dc802c1e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "dd9e401493cdd731",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "61b45e48b59fe2d3",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 416,
+    "collapsed": true
+  },
+  "right": {
+    "id": "8f0f9fea72ffb6f5",
+    "type": "split",
+    "children": [
+      {
+        "id": "73b9a9d05d2d8d5c",
+        "type": "tabs",
+        "dimension": 40.17857142857143,
+        "children": [
+          {
+            "id": "416b19ff44130085",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "277411a992076931",
+        "type": "tabs",
+        "dimension": 59.82142857142857,
+        "children": [
+          {
+            "id": "ffbc71d0b6c2419e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Interests/Lemma/Economics/IGNOU/Data/MEC101/Block - 1.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "7c3c300356f0e974",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Interests/Lemma/Economics/IGNOU/Data/MEC101/Block - 1.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ad55b29493168b28",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "alphabetical",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "2f07240d6c6f808b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Interests/Lemma/Economics/IGNOU/Data/MEC101/Block - 1.md"
+              }
+            }
+          },
+          {
+            "id": "c047533f3f02f1fe",
+            "type": "leaf",
+            "state": {
+              "type": "timeline",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 368.5,
+    "collapsed": true
+  },
+  "active": "5bf0b5995199b077",
+  "lastOpenFiles": [
+    "Interests/Collector/Data/Current Affairs/Magazine/Others/2022.md",
+    "Planning/Kanban/Monthly.md",
+    "Interests/Paper/Goodreads/Data/Currently Reading/Midnight's Children - Salman Rushdie.md",
+    "Planning/Kanban/Short Term.md",
+    "Interests/Lemma/Maths/Tasks.md",
+    "Planning/Kanban/Long Term.md",
+    "Interests/Lemma/Computer Science/Theoretical CS/Tasks.md",
+    "Interests/Lemma/Computer Science/Theoretical CS/Resources.md",
+    "Interests/Lemma/Computer Science/Applied CS/Resources.md",
+    "().md"
+  ]
+}

@@ -1,0 +1,101 @@
+## -*- coding: utf-8 -*-
+<%namespace name="base" file="base_helper.tmpl" import="*" />
+<%namespace name="notes" file="annotation_helper.tmpl" import="*" />
+${set_locale(lang)}
+${base.html_headstart()}
+<%block name="extra_head">
+### Leave this block alone.
+</%block>
+${template_hooks['extra_head']()}
+</head>
+<body class="content pagecentre">
+<a href="#content" class="sr-only sr-only-focusable">${messages("Skip to main content")}</a>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md headscolor headsborder static-top 
+% if theme_config.get('navbar_light'):
+navbar-light bg-light
+% else:
+navbar-dark bg-dark
+% endif
+">
+    <div class="container headingborder" style="padding: 0px;"><!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="${abs_link(_link("root", None, lang))}">
+        %if logo_url:
+            <img src="${logo_url}" alt="${blog_title|h}" id="logo" class="d-inline-block align-top">
+        %endif
+
+        % if show_blog_title:
+            <span id="blog-title">${blog_title|h}</span>
+        % endif
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav ml-auto">
+                ${base.html_navigation_links_entries(navigation_links)}
+                ${template_hooks['menu']()}
+            </ul>
+            %if search_form:
+                ${search_form}
+            %endif
+
+            <ul class="navbar-nav navbar-right">
+                ${base.html_navigation_links_entries(navigation_alt_links)}
+                <%block name="belowtitle">
+                %if len(translations) > 1:
+                    <li>${base.html_translations()}</li>
+                %endif
+                </%block>
+                % if show_sourcelink:
+                    <%block name="sourcelink"></%block>
+                %endif
+                ${template_hooks['menu_alt']()}
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav>
+
+<!-- End of Menubar -->
+
+<div class="container dotsborder dotscolor" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        ${template_hooks['page_header']()}
+        <%block name="content"></%block>
+        <!--End of body content-->
+
+        <footer id="footer">
+            ${content_footer}
+            ${template_hooks['page_footer']()}
+        </footer>
+    </div>
+</div>
+
+${base.late_load_js()}
+    %if date_fanciness != 0:
+        <!-- fancy dates -->
+        <script>
+        moment.locale("${momentjs_locales[lang]}");
+        fancydates(${date_fanciness}, ${js_date_format});
+        </script>
+        <!-- end fancy dates -->
+    %endif
+    <%block name="extra_js"></%block>
+    <script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script>
+${body_end}
+${template_hooks['body_end']()}
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bd5b9170c76cff6"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="https://apis.google.com/js/platform.js"></script>
+</body>
+</html>

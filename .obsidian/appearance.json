@@ -1,0 +1,12 @@
+{
+  "accentColor": "#74bef7",
+  "baseFontSize": 16,
+  "enabledCssSnippets": [
+    "obsidian"
+  ],
+  "theme": "obsidian",
+  "nativeMenus": false,
+  "cssTheme": "",
+  "textFontFamily": "Avenir Next",
+  "interfaceFontFamily": "Avenir Next"
+}

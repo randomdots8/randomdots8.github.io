@@ -1,0 +1,515 @@
+{
+  "workspaces": {
+    "UPSC - Task Manager": {
+      "main": {
+        "id": "66daf441c289688f",
+        "type": "split",
+        "children": [
+          {
+            "id": "e3bcbd3ea199ec7a",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "Task Manager.md"
+              }
+            }
+          },
+          {
+            "id": "30f06c5aa778be54",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "UPSC/Tasks.md"
+              }
+            }
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "c797aeb32af6f097",
+        "type": "split",
+        "children": [
+          {
+            "id": "84f88ea831af77b7",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "5167b3e7dc802c1e",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {}
+                }
+              },
+              {
+                "id": "dd9e401493cdd731",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "61b45e48b59fe2d3",
+                "type": "leaf",
+                "state": {
+                  "type": "starred",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 322
+      },
+      "right": {
+        "id": "8f0f9fea72ffb6f5",
+        "type": "split",
+        "children": [
+          {
+            "id": "e3c7039025eb45b7",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "0989239ce892e63e",
+                "type": "leaf",
+                "state": {
+                  "type": "calendar",
+                  "state": {}
+                }
+              },
+              {
+                "id": "d4d0507005acba10",
+                "type": "leaf",
+                "state": {
+                  "type": "reminder-list",
+                  "state": {}
+                }
+              }
+            ]
+          },
+          {
+            "id": "277411a992076931",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "ffbc71d0b6c2419e",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "Task Manager.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "7c3c300356f0e974",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "Task Manager.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "ad55b29493168b28",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  }
+                }
+              },
+              {
+                "id": "2f07240d6c6f808b",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "Task Manager.md"
+                  }
+                }
+              },
+              {
+                "id": "f0d22b15d80cb55c",
+                "type": "leaf",
+                "state": {
+                  "type": "timeline",
+                  "state": {}
+                }
+              }
+            ],
+            "currentTab": 4
+          }
+        ],
+        "direction": "horizontal",
+        "width": 382,
+        "collapsed": true
+      },
+      "active": "e3bcbd3ea199ec7a"
+    },
+    "Day-Planner": {
+      "main": {
+        "id": "66daf441c289688f",
+        "type": "split",
+        "children": [
+          {
+            "id": "e3bcbd3ea199ec7a",
+            "type": "leaf",
+            "dimension": 55.71142284569138,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Diary/Daily Notes/27th Dec 2021.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1140e1959cfdc79e",
+            "type": "leaf",
+            "dimension": 44.28857715430862,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "007 - Extras/Daily Events.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "c797aeb32af6f097",
+        "type": "split",
+        "children": [
+          {
+            "id": "84f88ea831af77b7",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "5167b3e7dc802c1e",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {}
+                }
+              },
+              {
+                "id": "dd9e401493cdd731",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "61b45e48b59fe2d3",
+                "type": "leaf",
+                "state": {
+                  "type": "starred",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 308
+      },
+      "right": {
+        "id": "8f0f9fea72ffb6f5",
+        "type": "split",
+        "children": [
+          {
+            "id": "e3c7039025eb45b7",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "0989239ce892e63e",
+                "type": "leaf",
+                "state": {
+                  "type": "calendar",
+                  "state": {}
+                }
+              },
+              {
+                "id": "d4d0507005acba10",
+                "type": "leaf",
+                "state": {
+                  "type": "reminder-list",
+                  "state": {}
+                }
+              }
+            ]
+          },
+          {
+            "id": "277411a992076931",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "ffbc71d0b6c2419e",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "Diary/Daily Notes/27th Dec 2021.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "7c3c300356f0e974",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "Diary/Daily Notes/27th Dec 2021.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "ad55b29493168b28",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  }
+                }
+              },
+              {
+                "id": "2f07240d6c6f808b",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "Diary/Daily Notes/27th Dec 2021.md"
+                  }
+                }
+              },
+              {
+                "id": "f0d22b15d80cb55c",
+                "type": "leaf",
+                "state": {
+                  "type": "timeline",
+                  "state": {}
+                }
+              }
+            ],
+            "currentTab": 4
+          }
+        ],
+        "direction": "horizontal",
+        "width": 382,
+        "collapsed": true
+      },
+      "active": "e3bcbd3ea199ec7a"
+    },
+    "Task Manager": {
+      "main": {
+        "id": "66daf441c289688f",
+        "type": "split",
+        "children": [
+          {
+            "id": "e3bcbd3ea199ec7a",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "Task Manager.md"
+              }
+            }
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "c797aeb32af6f097",
+        "type": "split",
+        "children": [
+          {
+            "id": "84f88ea831af77b7",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "5167b3e7dc802c1e",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {}
+                }
+              },
+              {
+                "id": "dd9e401493cdd731",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "61b45e48b59fe2d3",
+                "type": "leaf",
+                "state": {
+                  "type": "starred",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 308,
+        "collapsed": true
+      },
+      "right": {
+        "id": "8f0f9fea72ffb6f5",
+        "type": "split",
+        "children": [
+          {
+            "id": "e3c7039025eb45b7",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "0989239ce892e63e",
+                "type": "leaf",
+                "state": {
+                  "type": "calendar",
+                  "state": {}
+                }
+              },
+              {
+                "id": "d4d0507005acba10",
+                "type": "leaf",
+                "state": {
+                  "type": "reminder-list",
+                  "state": {}
+                }
+              }
+            ]
+          },
+          {
+            "id": "277411a992076931",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "ffbc71d0b6c2419e",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "Task Manager.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "7c3c300356f0e974",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "Task Manager.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "ad55b29493168b28",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  }
+                }
+              },
+              {
+                "id": "2f07240d6c6f808b",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "Task Manager.md"
+                  }
+                }
+              },
+              {
+                "id": "f0d22b15d80cb55c",
+                "type": "leaf",
+                "state": {
+                  "type": "timeline",
+                  "state": {}
+                }
+              }
+            ],
+            "currentTab": 4
+          }
+        ],
+        "direction": "horizontal",
+        "width": 382,
+        "collapsed": true
+      },
+      "active": "e3bcbd3ea199ec7a"
+    }
+  },
+  "active": "UPSC - Task Manager"
+}

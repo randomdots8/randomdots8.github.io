@@ -1,0 +1,19 @@
+<blockquote>
+<p>Repairing (installation) Audio Drivers of Debian PC</p>
+</blockquote>
+<p><img alt="" src="/images/Audio%20Drivers%20Installation.jpg"></p>
+<p>To support my freshly built PC, 4.11 kernel version for Realtek-ALC1220 was needed to support its audio. So, if you too are building your own new PC like me then this might help you as a  temporary fix. 
+Uninstall your alsa-base and reinstall latest version it should work fine.</p>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>apt-get<span class="w"> </span>remove<span class="w"> </span>alsa-base
+</pre></div>
+
+<p>Now go to http://www.stchman.com/tools/alsa/alsa_setup.sh and download the script and then do</p>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>./alsa_setup.sh
+</pre></div>
+
+<p>This will reinstall the lastest driver in your system and reboots it.</p>
+<p><strong>Precaution:</strong>  If you are having a Hybrid Graphics (Intel + Nvidia) then it is suggested to modify alsa-base when you are on Intel HD Graphics. Because this driver supports primarily Intel HDA versions. If you try to install while you are on NVIDIA graphics it might cause many failures.</p>
+<hr>
+<h2 id="subscribe">Subscribe!</h2>
+<p>If you find the above content helpful/interesting and wish to read more such articles, then do <em><strong>subscribe</strong></em> to <a href="https://randomproduct8.substack.com/"><strong>Random Product</strong></a> to <strong>never miss an update.</strong></p>
+<p><strong>PS:</strong> Don’t hesitate to comment or leave a <strong><a href="https://twitter.com/randomproduct8">message</a></strong></p>

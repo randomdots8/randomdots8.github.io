@@ -1,0 +1,42 @@
+{
+  "useMarkdownLinks": true,
+  "newLinkFormat": "relative",
+  "attachmentFolderPath": "images",
+  "alwaysUpdateLinks": true,
+  "foldHeading": true,
+  "foldIndent": true,
+  "mobileToolbarCommands": [
+    "editor:insert-tag",
+    "editor:set-heading",
+    "editor:toggle-checklist-status",
+    "editor:toggle-highlight",
+    "editor:paste",
+    "editor:insert-wikilink",
+    "editor:insert-embed",
+    "editor:attach-file",
+    "editor:toggle-bold",
+    "editor:toggle-italics",
+    "editor:toggle-strikethrough",
+    "editor:toggle-code",
+    "editor:toggle-blockquote",
+    "editor:insert-link",
+    "editor:toggle-bullet-list",
+    "editor:toggle-numbered-list",
+    "editor:indent-list",
+    "editor:unindent-list",
+    "editor:undo",
+    "editor:redo",
+    "editor:toggle-keyboard",
+    "editor:configure-toolbar"
+  ],
+  "legacyEditor": false,
+  "pdfExportSettings": {
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "livePreview": true,
+  "strictLineBreaks": false,
+  "spellcheck": false
+}

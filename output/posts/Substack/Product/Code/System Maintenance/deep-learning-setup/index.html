@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deep learning Setup | #randomdots</title>
+<link href="../../../../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../../../../../rss.xml">
+<link rel="canonical" href="https://kargilsubbu8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/">
+<link rel="icon" href="../../../../../../images/favicon.png" sizes="48x48">
+<!--[if lt IE 9]><script src="../../../../../../assets/js/html5.js"></script><![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-211864815-1"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-211864815-1');
+</script><meta name="author" content="Random Dots">
+<link rel="prev" href="../../System%20Maintenance/audio-drivers-installation/" title="Audio Drivers Installion" type="text/html">
+<link rel="next" href="../../../../Proof/Economics/asymptotic-sequential-learning/" title="Asymptotic Sequential Learning." type="text/html">
+<meta property="og:site_name" content="#randomdots">
+<meta property="og:title" content="Deep learning Setup">
+<meta property="og:url" content="https://kargilsubbu8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/">
+<meta property="og:description" content='Installing tools for NVIDIA GPU &amp; creating a Deeplearing Setup (caffe)
+
+
+Table of Contents
+
+
+1. Specifications
+2. Disabling "nouveau" driver
+3. Working setup using bumblebee &amp; primus for Intel+Nvidia '>
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-11-23T07:24:00+05:30">
+<meta property="article:tag" content="code">
+<meta property="article:tag" content="deep-learning">
+<meta property="article:tag" content="installation">
+<meta property="article:tag" content="system-maintenance">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="#randomdots">
+<meta name="twitter:creator" content="jeanbourgain8">
+</head>
+<body class="content pagecentre">
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+<!-- Menubar --><nav class="navbar navbar-expand-md headscolor headsborder static-top 
+navbar-light bg-light
+"><div class="container headingborder" style="padding: 0px;">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="https://kargilsubbu8.github.io/">
+
+            <span id="blog-title">#randomdots</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav ml-auto">
+<li class="nav-item">
+<a href="../../../../../../categories/cat_posts/" class="nav-link">blog</a>
+                </li>
+<li class="nav-item">
+<a href="../../../../../../tags.html" class="nav-link">topics</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container dotsborder dotscolor" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="../../System%20Maintenance/deep-learning-setup/" class="u-url">Deep learning Setup</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Random Dots
+            </span></p>
+            <p class="dateline">
+            <a href="../../System%20Maintenance/deep-learning-setup/" rel="bookmark">
+            <time class="published dt-published" datetime="2017-11-23T07:24:00+05:30" itemprop="datePublished" title="23 November-2017">23 November-2017</time></a>
+            </p>
+                <p class="commentline">
+    
+    <a href="../../System%20Maintenance/deep-learning-setup/#disqus_thread" data-disqus-identifier="cache/posts/Substack/Product/Code/System Maintenance/Deep Learning Setup.html">Discussions</a>
+
+
+            
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <blockquote>
+<p>Installing tools for NVIDIA GPU &amp; creating a Deeplearing Setup (caffe)</p>
+</blockquote>
+<p><img alt="" src="../../../../../../images/Deep%20Learning%20Setup.png"></p>
+<h5>Table of Contents</h5>
+<div class="toc">
+<ul>
+<li><a href="../../System%20Maintenance/deep-learning-setup/#1-specifications">1. Specifications</a></li>
+<li><a href="../../System%20Maintenance/deep-learning-setup/#2-disabling-nouveau-driver">2. Disabling "nouveau" driver</a></li>
+<li><a href="../../System%20Maintenance/deep-learning-setup/#3-working-setup-using-bumblebee-primus-for-intelnvidia-gpu">3. Working setup using bumblebee &amp; primus for Intel+Nvidia GPU</a></li>
+<li><a href="../../System%20Maintenance/deep-learning-setup/#4-installation-of-cuda-80-and-verification">4. Installation of CUDA-8.0 and verification</a></li>
+<li><a href="../../System%20Maintenance/deep-learning-setup/#5-installation-of-cudnn">5. Installation of CUDNN</a></li>
+<li><a href="../../System%20Maintenance/deep-learning-setup/#6-installing-opencv32-just-enough-for-working-with-caffe">6. Installing OpenCV3.2 (just enough for working with caffe)</a></li>
+<li><a href="../../System%20Maintenance/deep-learning-setup/#7-installing-caffe-with-opencv3-gpu-cudacudnn">7. Installing Caffe with OpenCV3 &amp; GPU (CUDA+cuDNN)</a></li>
+<li><a href="../../System%20Maintenance/deep-learning-setup/#subscribe">Subscribe!</a></li>
+</ul>
+</div>
+<h3 id="1-specifications">1. Specifications</h3>
+<ul>
+<li>OS - Ubuntu 16.04</li>
+<li>Graphics - Nvidia Optimus (GTX1070 + IntelHD)</li>
+</ul>
+<h3 id="2-disabling-nouveau-driver">2. Disabling "nouveau" driver</h3>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade
+</pre></div>
+
+<p>Install one editor which you like the most</p>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>vim
+</pre></div>
+
+<p>Before installing the drivers into your hybrid system, first we need to disable nouveau (default display driver comes with linux) because it lies above all in permissions. Press 'CTRL+Alt+F1' to open the terminal, enter your username, password credentials and enter </p>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>vim<span class="w"> </span>/etc/modprobe.d/blacklist.conf
+</pre></div>
+
+<p>Now, add the following lines at the end of the file (Save &amp; Exit)</p>
+<div class="code"><pre class="code literal-block">blacklist<span class="w"> </span>nouveau
+blacklist<span class="w"> </span>lbm-nouveau
+options<span class="w"> </span>nouveau<span class="w"> </span><span class="nv">modeset</span><span class="o">=</span><span class="m">0</span>
+<span class="nb">alias</span><span class="w"> </span>nouveau<span class="w"> </span>off
+<span class="nb">alias</span><span class="w"> </span>lbm-nouveau<span class="w"> </span>off
+</pre></div>
+
+<p>Next, get back to the terminal and enter the following and update the kernel and then reboot</p>
+<div class="code"><pre class="code literal-block"><span class="nb">echo</span><span class="w"> </span>options<span class="w"> </span>nouveau<span class="w"> </span><span class="nv">modeset</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/modprobe.d/nouveau-kms.conf
+sudo<span class="w"> </span>update-initramfs<span class="w"> </span>-u
+sudo<span class="w"> </span>reboot
+</pre></div>
+
+<h3 id="3-working-setup-using-bumblebee-primus-for-intelnvidia-gpu">3. Working setup using bumblebee &amp; primus for Intel+Nvidia GPU</h3>
+<p>Basically, using primus we can switch between the graphics (Nvidia &amp; Intel). We take the help of bumblebee to make this smooth and a GUI indicator to make the transistions simple.</p>
+<p>Add the following repositories</p>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>apt-add-repository<span class="w"> </span>ppa:graphics-drivers
+sudo<span class="w"> </span>apt-add-repository<span class="w"> </span>ppa:bumblebee/testing
+sudo<span class="w"> </span>apt-add-repository<span class="w"> </span>ppa:nilarimogard/webupd8
+sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+</pre></div>
+
+<p>Go to Settings &gt;&gt; Software &amp; Updates &gt;&gt; Additional Drivers
+Select Nvidia-378 driver (because it is stable and it worked for me) and click on Apply then Restart the system.</p>
+<p>After Restarting, you can see the Nvidia-driver being selected as the display driver which previously was Xorg's nouveau. For further confirmation, you can check with the following command and the output must be something like this.</p>
+<div class="code"><pre class="code literal-block">nvidia-smi
+
+<span class="o">[</span>root@localhost<span class="w"> </span>release<span class="o">]</span><span class="c1"># nvidia-smi</span>
+Wed<span class="w"> </span>Sep<span class="w"> </span><span class="m">26</span><span class="w"> </span><span class="m">23</span>:16:16<span class="w"> </span><span class="m">2012</span><span class="w">       </span>
++------------------------------------------------------+<span class="w">                       </span>
+<span class="p">|</span><span class="w"> </span>NVIDIA-SMI<span class="w"> </span><span class="m">3</span>.295.41<span class="w">   </span>Driver<span class="w"> </span>Version:<span class="w"> </span><span class="m">295</span>.41<span class="w">         </span><span class="p">|</span><span class="w">                       </span>
+<span class="p">|</span>-------------------------------+----------------------+----------------------+
+<span class="p">|</span><span class="w"> </span>Nb.<span class="w">  </span>Name<span class="w">                     </span><span class="p">|</span><span class="w"> </span>Bus<span class="w"> </span>Id<span class="w">        </span>Disp.<span class="w">  </span><span class="p">|</span><span class="w"> </span>Volatile<span class="w"> </span>ECC<span class="w"> </span>SB<span class="w"> </span>/<span class="w"> </span>DB<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>Fan<span class="w">   </span>Temp<span class="w">   </span>Power<span class="w"> </span>Usage<span class="w"> </span>/Cap<span class="w"> </span><span class="p">|</span><span class="w"> </span>Memory<span class="w"> </span>Usage<span class="w">         </span><span class="p">|</span><span class="w"> </span>GPU<span class="w"> </span>Util.<span class="w"> </span>Compute<span class="w"> </span>M.<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="o">===============================</span>+<span class="o">======================</span>+<span class="o">======================</span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="m">0</span>.<span class="w">  </span>Tesla<span class="w"> </span>C2050<span class="w">               </span><span class="p">|</span><span class="w"> </span><span class="m">0000</span>:05:00.0<span class="w">  </span>On<span class="w">     </span><span class="p">|</span><span class="w">         </span><span class="m">0</span><span class="w">          </span><span class="m">0</span><span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w">  </span><span class="m">30</span>%<span class="w">   </span><span class="m">62</span><span class="w"> </span>C<span class="w">  </span>P0<span class="w">    </span>N/A<span class="w"> </span>/<span class="w">  </span>N/A<span class="w"> </span><span class="p">|</span><span class="w">   </span><span class="m">3</span>%<span class="w">   </span>70MB<span class="w"> </span>/<span class="w"> </span>2687MB<span class="w"> </span><span class="p">|</span><span class="w">   </span><span class="m">44</span>%<span class="w">     </span>Default<span class="w">    </span><span class="p">|</span>
+<span class="p">|</span>-------------------------------+----------------------+----------------------<span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>Compute<span class="w"> </span>processes:<span class="w">                                               </span>GPU<span class="w"> </span>Memory<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w">  </span>GPU<span class="w">  </span>PID<span class="w">     </span>Process<span class="w"> </span>name<span class="w">                                       </span>Usage<span class="w">      </span><span class="p">|</span>
+<span class="p">|</span><span class="o">=============================================================================</span><span class="p">|</span>
+<span class="p">|</span><span class="w">  </span><span class="m">0</span>.<span class="w">  </span><span class="m">7336</span><span class="w">     </span>./align<span class="w">                                                 </span>61MB<span class="w">  </span><span class="p">|</span>
++-----------------------------------------------------------------------------+
+</pre></div>
+
+<p>Now, either use command line or Synaptics Manager to install the requirements. For simplicity, I shall use Synaptic Manager to demonstrate
+1. Enter bumblebee in the search dialog then you will be able to seea list - bumblebee, bumblebee-nvidia, primus. Select all the three and Mark up them for Installation and click Apply
+2. After installing above three we check for bbswitch-dkms in search dialog box. This can be seen as already installed (if not then do install it)
+Get back to the terminal and take the help of prime to select Intel Graphics as primary</p>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>prime-select<span class="w"> </span>intel
+sudo<span class="w"> </span>reboot
+</pre></div>
+
+<p>Now, enter prime-indicator(/plus) in search and mark up for installation. Restart your system.
+Inorder to make the bumblebee and bbswitch to take care of your system and use latest nvidia driver which has been just installed, go to the following file and edit</p>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>vim<span class="w"> </span>/etc/bumblebee/bumblebee.conf
+</pre></div>
+
+<p>Update the following contents</p>
+<div class="code"><pre class="code literal-block"><span class="nv">Driver</span><span class="o">=</span><span class="w"> </span>should<span class="w"> </span>be<span class="w"> </span>changed<span class="w"> </span>to
+<span class="nv">Driver</span><span class="o">=</span>nvidia
+</pre></div>
+
+<p>In [driver-nvidia] section replace all nvidia-current terms to nvidia-378 (If you have installed 378 or else replace it with the driver number whichever has been installed) and also in the same section replace</p>
+<div class="code"><pre class="code literal-block"><span class="nv">PMMethod</span><span class="o">=</span>auto
+<span class="nv">PMMethod</span><span class="o">=</span>bbswitch
+</pre></div>
+
+<p>Now restart</p>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>reboot
+</pre></div>
+
+<p>We are done with our Nvidia driver installation and we also can switch between Intel and Nvidia Graphics which will help with saving the battery</p>
+<h3 id="4-installation-of-cuda-80-and-verification">4. Installation of CUDA-8.0 and verification</h3>
+<p>Now, switch to Nvidia Graphics and download the run file. In my case, I have downloaded <code>cuda_8.0.61_375.26_linux.run</code> file because, previous ones need a below 4.9 gcc compiler but when it comes to 16.04 by defualt it installs gcc-5.0. The installation of Caffe requires a gcc-5 compiler to work (portbuf). After downloading, go to the specific folder and then enter</p>
+<div class="code"><pre class="code literal-block">chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>cuda_8.0.61_375.26_linux.run
+sudo<span class="w"> </span>./cuda_8.0.61_375.26_linux.run
+</pre></div>
+
+<p>Enter 'no' when asked to install Nvidia driver and rest all can be entered as "yes".
+Don't worry if it shows something like this</p>
+<div class="code"><pre class="code literal-block"><span class="o">===========</span>
+
+<span class="o">=</span><span class="w"> </span><span class="nv">Summary</span><span class="w"> </span><span class="o">=</span>
+
+<span class="o">===========</span>
+
+Driver:<span class="w"> </span>Not<span class="w"> </span>Selected
+
+Toolkit:<span class="w"> </span>Installed<span class="w"> </span><span class="k">in</span><span class="w"> </span>/usr/local/cuda-8.0
+
+Samples:<span class="w"> </span>Installed<span class="w"> </span><span class="k">in</span><span class="w"> </span>/home/username,<span class="w"> </span>but<span class="w"> </span>missing<span class="w"> </span>recommended<span class="w"> </span>libraries
+
+Please<span class="w"> </span>make<span class="w"> </span>sure<span class="w"> </span>that
+
+-<span class="w"> </span>PATH<span class="w"> </span>includes<span class="w"> </span>/usr/local/cuda-8.0/bin
+
+-<span class="w"> </span>LD_LIBRARY_PATH<span class="w"> </span>includes<span class="w"> </span>/usr/local/cuda-8.0/lib64,<span class="w"> </span>or,<span class="w"> </span>add<span class="w"> </span>/usr/local/cuda-8.0/lib64<span class="w"> </span>to<span class="w"> </span>/etc/ld.so.conf<span class="w"> </span>and<span class="w"> </span>run<span class="w"> </span>ldconfig<span class="w"> </span>as<span class="w"> </span>root
+
+To<span class="w"> </span>uninstall<span class="w"> </span>the<span class="w"> </span>CUDA<span class="w"> </span>Toolkit,<span class="w"> </span>run<span class="w"> </span>the<span class="w"> </span>uninstall<span class="w"> </span>script<span class="w"> </span><span class="k">in</span><span class="w"> </span>/usr/local/cuda-8.0/bin
+
+Please<span class="w"> </span>see<span class="w"> </span>CUDA_Installation_Guide_Linux.pdf<span class="w"> </span><span class="k">in</span><span class="w"> </span>/usr/local/cuda-8.0/doc/pdf<span class="w"> </span><span class="k">for</span><span class="w"> </span>detailed<span class="w"> </span>information<span class="w"> </span>on<span class="w"> </span>setting<span class="w"> </span>up<span class="w"> </span>CUDA.
+
+***WARNING:<span class="w"> </span>Incomplete<span class="w"> </span>installation!<span class="w"> </span>This<span class="w"> </span>installation<span class="w"> </span>did<span class="w"> </span>not<span class="w"> </span>install<span class="w"> </span>the<span class="w"> </span>CUDA<span class="w"> </span>Driver.<span class="w"> </span>A<span class="w"> </span>driver<span class="w"> </span>of<span class="w"> </span>version<span class="w"> </span>at<span class="w"> </span>least<span class="w"> </span><span class="m">361</span>.00<span class="w"> </span>is<span class="w"> </span>required<span class="w"> </span><span class="k">for</span><span class="w"> </span>CUDA<span class="w"> </span><span class="m">8</span>.0<span class="w"> </span>functionality<span class="w"> </span>to<span class="w"> </span>work.
+</pre></div>
+
+<p>Now (Optional not required)</p>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>modprobe<span class="w"> </span>nvidia
+</pre></div>
+
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>vim<span class="w"> </span>/etc/profile
+
+and<span class="w"> </span>enter<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>end
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/cuda-8.0/bin:<span class="nv">$PATH</span><span class="w">  </span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/local/cuda-8.0/lib64:<span class="nv">$LD_LIBRARY_PATH</span>
+</pre></div>
+
+<p>Save &amp; Exit</p>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>ldconfig
+</pre></div>
+
+<p>The setup is complete for CUDA now it's time to verify this</p>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>freeglut3-dev<span class="w"> </span>build-essential<span class="w"> </span>libx11-dev<span class="w"> </span>libxmu-dev<span class="w"> </span>libxi-dev<span class="w">  </span>libglu1-mesa<span class="w"> </span>libglu1-mesa-dev<span class="w"> </span>libgl1-mesa-glx<span class="w">  </span>
+</pre></div>
+
+<p>Go to the location where samples folder is installed by default it is installed at ~/</p>
+<div class="code"><pre class="code literal-block"><span class="nb">cd</span><span class="w"> </span>into<span class="w"> </span>the<span class="w"> </span>samples<span class="w"> </span>directory
+<span class="nb">cd</span><span class="w"> </span>1_Utilities/deviceQuery
+sudo<span class="w"> </span>make
+sudo<span class="w"> </span>./deviceQuery
+</pre></div>
+
+<p>It should show something like this</p>
+<div class="code"><pre class="code literal-block">Device<span class="w"> </span><span class="m">0</span>:<span class="w"> </span>Quadro<span class="w"> </span>M1000M
+<span class="w">  </span>CUDA<span class="w"> </span>Driver<span class="w"> </span>Version<span class="w"> </span>/<span class="w"> </span>Runtime<span class="w"> </span>Version<span class="w">          </span><span class="m">8</span>.0<span class="w"> </span>/<span class="w"> </span><span class="m">7</span>.5
+<span class="w">  </span>CUDA<span class="w"> </span>Capability<span class="w"> </span>Major/Minor<span class="w"> </span>version<span class="w"> </span>number:<span class="w">    </span><span class="m">5</span>.0
+<span class="w">  </span>Total<span class="w"> </span>amount<span class="w"> </span>of<span class="w"> </span>global<span class="w"> </span>memory:<span class="w">                 </span><span class="m">2002</span><span class="w"> </span>MBytes<span class="w"> </span><span class="o">(</span><span class="m">2099642368</span><span class="w"> </span>bytes<span class="o">)</span>
+<span class="w">  </span><span class="o">(</span><span class="w"> </span><span class="m">4</span><span class="o">)</span><span class="w"> </span>Multiprocessors,<span class="w"> </span><span class="o">(</span><span class="m">128</span><span class="o">)</span><span class="w"> </span>CUDA<span class="w"> </span>Cores/MP:<span class="w">     </span><span class="m">512</span><span class="w"> </span>CUDA<span class="w"> </span>Cores
+<span class="w">  </span>GPU<span class="w"> </span>Max<span class="w"> </span>Clock<span class="w"> </span>rate:<span class="w">                            </span><span class="m">1072</span><span class="w"> </span>MHz<span class="w"> </span><span class="o">(</span><span class="m">1</span>.07<span class="w"> </span>GHz<span class="o">)</span>
+<span class="w">  </span>Memory<span class="w"> </span>Clock<span class="w"> </span>rate:<span class="w">                             </span><span class="m">2505</span><span class="w"> </span>Mhz
+<span class="w">  </span>Memory<span class="w"> </span>Bus<span class="w"> </span>Width:<span class="w">                              </span><span class="m">128</span>-bit
+<span class="w">  </span>L2<span class="w"> </span>Cache<span class="w"> </span>Size:<span class="w">                                 </span><span class="m">2097152</span><span class="w"> </span>bytes
+<span class="w">  </span>Maximum<span class="w"> </span>Texture<span class="w"> </span>Dimension<span class="w"> </span>Size<span class="w"> </span><span class="o">(</span>x,y,z<span class="o">)</span><span class="w">         </span><span class="nv">1D</span><span class="o">=(</span><span class="m">65536</span><span class="o">)</span>,<span class="w"> </span><span class="nv">2D</span><span class="o">=(</span><span class="m">65536</span>,<span class="w"> </span><span class="m">65536</span><span class="o">)</span>,<span class="w"> </span><span class="nv">3D</span><span class="o">=(</span><span class="m">4096</span>,<span class="w"> </span><span class="m">4096</span>,<span class="w"> </span><span class="m">4096</span><span class="o">)</span>
+<span class="w">  </span>Maximum<span class="w"> </span>Layered<span class="w"> </span>1D<span class="w"> </span>Texture<span class="w"> </span>Size,<span class="w"> </span><span class="o">(</span>num<span class="o">)</span><span class="w"> </span>layers<span class="w">  </span><span class="nv">1D</span><span class="o">=(</span><span class="m">16384</span><span class="o">)</span>,<span class="w"> </span><span class="m">2048</span><span class="w"> </span>layers
+<span class="w">  </span>Maximum<span class="w"> </span>Layered<span class="w"> </span>2D<span class="w"> </span>Texture<span class="w"> </span>Size,<span class="w"> </span><span class="o">(</span>num<span class="o">)</span><span class="w"> </span>layers<span class="w">  </span><span class="nv">2D</span><span class="o">=(</span><span class="m">16384</span>,<span class="w"> </span><span class="m">16384</span><span class="o">)</span>,<span class="w"> </span><span class="m">2048</span><span class="w"> </span>layers
+<span class="w">  </span>Total<span class="w"> </span>amount<span class="w"> </span>of<span class="w"> </span>constant<span class="w"> </span>memory:<span class="w">               </span><span class="m">65536</span><span class="w"> </span>bytes
+<span class="w">  </span>Total<span class="w"> </span>amount<span class="w"> </span>of<span class="w"> </span>shared<span class="w"> </span>memory<span class="w"> </span>per<span class="w"> </span>block:<span class="w">       </span><span class="m">49152</span><span class="w"> </span>bytes
+<span class="w">  </span>Total<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>registers<span class="w"> </span>available<span class="w"> </span>per<span class="w"> </span>block:<span class="w"> </span><span class="m">65536</span>
+<span class="w">  </span>Warp<span class="w"> </span>size:<span class="w">                                     </span><span class="m">32</span>
+<span class="w">  </span>Maximum<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>threads<span class="w"> </span>per<span class="w"> </span>multiprocessor:<span class="w">  </span><span class="m">2048</span>
+<span class="w">  </span>Maximum<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>threads<span class="w"> </span>per<span class="w"> </span>block:<span class="w">           </span><span class="m">1024</span>
+<span class="w">  </span>Max<span class="w"> </span>dimension<span class="w"> </span>size<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>thread<span class="w"> </span>block<span class="w"> </span><span class="o">(</span>x,y,z<span class="o">)</span>:<span class="w"> </span><span class="o">(</span><span class="m">1024</span>,<span class="w"> </span><span class="m">1024</span>,<span class="w"> </span><span class="m">64</span><span class="o">)</span>
+<span class="w">  </span>Max<span class="w"> </span>dimension<span class="w"> </span>size<span class="w"> </span>of<span class="w"> </span>a<span class="w"> </span>grid<span class="w"> </span>size<span class="w">    </span><span class="o">(</span>x,y,z<span class="o">)</span>:<span class="w"> </span><span class="o">(</span><span class="m">2147483647</span>,<span class="w"> </span><span class="m">65535</span>,<span class="w"> </span><span class="m">65535</span><span class="o">)</span>
+<span class="w">  </span>Maximum<span class="w"> </span>memory<span class="w"> </span>pitch:<span class="w">                          </span><span class="m">2147483647</span><span class="w"> </span>bytes
+<span class="w">  </span>Texture<span class="w"> </span>alignment:<span class="w">                             </span><span class="m">512</span><span class="w"> </span>bytes
+<span class="w">  </span>Concurrent<span class="w"> </span>copy<span class="w"> </span>and<span class="w"> </span>kernel<span class="w"> </span>execution:<span class="w">          </span>Yes<span class="w"> </span>with<span class="w"> </span><span class="m">1</span><span class="w"> </span>copy<span class="w"> </span>engine<span class="o">(</span>s<span class="o">)</span>
+<span class="w">  </span>Run<span class="w"> </span><span class="nb">time</span><span class="w"> </span>limit<span class="w"> </span>on<span class="w"> </span>kernels:<span class="w">                     </span>No
+<span class="w">  </span>Integrated<span class="w"> </span>GPU<span class="w"> </span>sharing<span class="w"> </span>Host<span class="w"> </span>Memory:<span class="w">            </span>No
+<span class="w">  </span>Support<span class="w"> </span>host<span class="w"> </span>page-locked<span class="w"> </span>memory<span class="w"> </span>mapping:<span class="w">       </span>Yes
+<span class="w">  </span>Alignment<span class="w"> </span>requirement<span class="w"> </span><span class="k">for</span><span class="w"> </span>Surfaces:<span class="w">            </span>Yes
+<span class="w">  </span>Device<span class="w"> </span>has<span class="w"> </span>ECC<span class="w"> </span>support:<span class="w">                        </span>Disabled
+<span class="w">  </span>Device<span class="w"> </span>supports<span class="w"> </span>Unified<span class="w"> </span>Addressing<span class="w"> </span><span class="o">(</span>UVA<span class="o">)</span>:<span class="w">      </span>Yes
+<span class="w">  </span>Device<span class="w"> </span>PCI<span class="w"> </span>Domain<span class="w"> </span>ID<span class="w"> </span>/<span class="w"> </span>Bus<span class="w"> </span>ID<span class="w"> </span>/<span class="w"> </span>location<span class="w"> </span>ID:<span class="w">   </span><span class="m">0</span><span class="w"> </span>/<span class="w"> </span><span class="m">1</span><span class="w"> </span>/<span class="w"> </span><span class="m">0</span>
+<span class="w">  </span>Compute<span class="w"> </span>Mode:
+<span class="w">     </span>&lt;<span class="w"> </span>Default<span class="w"> </span><span class="o">(</span>multiple<span class="w"> </span>host<span class="w"> </span>threads<span class="w"> </span>can<span class="w"> </span>use<span class="w"> </span>with<span class="w"> </span>device<span class="w"> </span>simultaneously<span class="o">)</span><span class="w"> </span>&gt;
+
+deviceQuery,<span class="w"> </span>CUDA<span class="w"> </span><span class="nv">Driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>CUDART,<span class="w"> </span>CUDA<span class="w"> </span>Driver<span class="w"> </span><span class="nv">Version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8</span>.0,<span class="w"> </span>CUDA<span class="w"> </span>Runtime<span class="w"> </span><span class="nv">Version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">7</span>.5,<span class="w"> </span><span class="nv">NumDevs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="nv">Device0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Quadro<span class="w"> </span>M1000M
+<span class="nv">Result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>PASS
+</pre></div>
+
+<p>Similarly, we conduct the bandwidth test which will also show PASS, something similar to above  and with this we confirm its installation. If it shows "fail" then there is some error in CUDA installation.</p>
+<div class="code"><pre class="code literal-block"><span class="nb">cd</span><span class="w"> </span>..
+<span class="nb">cd</span><span class="w"> </span>bandwidthTest
+sudo<span class="w"> </span>make
+sudo<span class="w"> </span>./bandwidthTest
+</pre></div>
+
+<p>With this, we are ready with our system to use CUDA and NVIDIA GPU.</p>
+<h3 id="5-installation-of-cudnn">5. Installation of CUDNN</h3>
+<p>Go to Nvidia's site and download cuDNN ( I myself used cuDNN 5.1) you will get almost 98MB file. Extract the contents and go to the extracted folder</p>
+<div class="code"><pre class="code literal-block"><span class="nb">cd</span><span class="w"> </span>/cuda
+sudo<span class="w"> </span>cp<span class="w"> </span>-P<span class="w"> </span>include/cudnn.h<span class="w"> </span>/usr/include
+sudo<span class="w"> </span>cp<span class="w"> </span>-P<span class="w"> </span>lib64/libcudnn*<span class="w"> </span>/usr/lib/x86_64-linux-gnu/
+sudo<span class="w"> </span>chmod<span class="w"> </span>a+r<span class="w"> </span>/usr/lib/x86_64-linux-gnu/libcudnn*
+</pre></div>
+
+<h3 id="6-installing-opencv32-just-enough-for-working-with-caffe">6. Installing OpenCV3.2 (just enough for working with caffe)</h3>
+<p>In Ubuntu 16.04, install the dependencies first and then build the OpenCV 3.2 from source.</p>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>--assume-yes<span class="w"> </span>build-essential<span class="w"> </span>cmake<span class="w"> </span>git
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>--assume-yes<span class="w"> </span>pkg-config<span class="w"> </span>unzip<span class="w"> </span>ffmpeg<span class="w"> </span>qtbase5-dev<span class="w"> </span>python-dev<span class="w"> </span>python3-dev<span class="w"> </span>python-numpy<span class="w"> </span>python3-numpy
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>--assume-yes<span class="w"> </span>libopencv-dev<span class="w"> </span>libgtk-3-dev<span class="w"> </span>libdc1394-22<span class="w"> </span>libdc1394-22-dev<span class="w"> </span>libjpeg-dev<span class="w"> </span>libpng12-dev<span class="w"> </span>libtiff5-dev<span class="w"> </span>libjasper-dev
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>--assume-yes<span class="w"> </span>libavcodec-dev<span class="w"> </span>libavformat-dev<span class="w"> </span>libswscale-dev<span class="w"> </span>libxine2-dev<span class="w"> </span>libgstreamer0.10-dev<span class="w"> </span>libgstreamer-plugins-base0.10-dev
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>--assume-yes<span class="w"> </span>libv4l-dev<span class="w"> </span>libtbb-dev<span class="w"> </span>libfaac-dev<span class="w"> </span>libmp3lame-dev<span class="w"> </span>libopencore-amrnb-dev<span class="w"> </span>libopencore-amrwb-dev<span class="w"> </span>libtheora-dev
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>--assume-yes<span class="w"> </span>libvorbis-dev<span class="w"> </span>libxvidcore-dev<span class="w"> </span>v4l-utils<span class="w"> </span>python-vtk
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>--assume-yes<span class="w"> </span>liblapacke-dev<span class="w"> </span>libopenblas-dev<span class="w"> </span>checkinstall
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>--assume-yes<span class="w"> </span>libgdal-dev
+</pre></div>
+
+<p>Download the latest source archive for OpenCV 3.2 from https://github.com/opencv/opencv/archive/3.2.0.zip</p>
+<p>Enter the unpacked directory. Execute</p>
+<div class="code"><pre class="code literal-block">mkdir<span class="w"> </span>build
+<span class="nb">cd</span><span class="w"> </span>build/<span class="w">    </span>
+cmake<span class="w"> </span>-D<span class="w"> </span><span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span>RELEASE<span class="w"> </span>-D<span class="w"> </span><span class="nv">CMAKE_INSTALL_PREFIX</span><span class="o">=</span>/usr/local<span class="w"> </span>-D<span class="w"> </span><span class="nv">FORCE_VTK</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">WITH_TBB</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">WITH_V4L</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">WITH_QT</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">WITH_OPENGL</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">WITH_CUBLAS</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">CUDA_NVCC_FLAGS</span><span class="o">=</span><span class="s2">"-D_FORCE_INLINES"</span><span class="w"> </span>-D<span class="w"> </span><span class="nv">WITH_GDAL</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">WITH_XINE</span><span class="o">=</span>ON<span class="w"> </span>-D<span class="w"> </span><span class="nv">BUILD_EXAMPLES</span><span class="o">=</span>ON<span class="w"> </span>..
+make<span class="w"> </span>-j<span class="w"> </span><span class="k">$(($(</span>nproc<span class="k">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="k">))</span>
+</pre></div>
+
+<p>To complete the installation execute the following</p>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>make<span class="w"> </span>install
+sudo<span class="w"> </span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">'echo "/usr/local/lib" &gt; /etc/ld.so.conf.d/opencv.conf'</span>
+sudo<span class="w"> </span>ldconfig
+sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+</pre></div>
+
+<p>Verify installation with</p>
+<div class="code"><pre class="code literal-block">python
+&gt;&gt;&gt;<span class="w"> </span>import<span class="w"> </span>cv2
+</pre></div>
+
+<p>If it doesn't work then there is some error with OpenCV3.2 installation. Now, we are done with our OpenCV3 installation, next we jump into Caffe installation.</p>
+<h3 id="7-installing-caffe-with-opencv3-gpu-cudacudnn">7. Installing Caffe with OpenCV3 &amp; GPU (CUDA+cuDNN)</h3>
+<p>For pre-requisites we execute the following lines</p>
+<div class="code"><pre class="code literal-block">sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+sudo<span class="w"> </span>apt-get<span class="w"> </span>upgrade
+
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>build-essential<span class="w"> </span>cmake<span class="w"> </span>git<span class="w"> </span>pkg-config
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>libprotobuf-dev<span class="w"> </span>libleveldb-dev<span class="w"> </span>libsnappy-dev<span class="w"> </span>libhdf5-serial-dev<span class="w"> </span>protobuf-compiler
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>libatlas-base-dev
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--no-install-recommends<span class="w"> </span>libboost-all-dev
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>libgflags-dev<span class="w"> </span>libgoogle-glog-dev<span class="w"> </span>liblmdb-dev
+
+<span class="c1"># (Python general)</span>
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>python-pip
+
+<span class="c1"># (Python 2.7 development files)</span>
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>python-dev
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>python-numpy<span class="w"> </span>python-scipy
+</pre></div>
+
+<p>Clone the Caffe repo.</p>
+<div class="code"><pre class="code literal-block"><span class="nb">cd</span><span class="w"> </span>~
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/BVLC/caffe.git
+</pre></div>
+
+<p>Make changes in Makefile.config and Makefile and configure it to proceed with the Caffe installation smoothly.</p>
+<div class="code"><pre class="code literal-block"><span class="nb">cd</span><span class="w"> </span>~/caffe
+cp<span class="w"> </span>Makefile.config.example<span class="w"> </span>Makefile.config
+sudo<span class="w"> </span>vim<span class="w"> </span>Makefile.config
+</pre></div>
+
+<p>Make the following changes and configure the copied Makefile.config (by uncommenting and editing the following lines in the file)</p>
+<div class="code"><pre class="code literal-block">USE_CUDNN<span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="m">1</span>
+OPENCV_VERSION<span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="m">3</span>
+
+Change
+CUDA_DIR<span class="w"> </span>:<span class="o">=</span><span class="w"> </span>/usr/local/cuda
+to
+CUDA_DIR<span class="w"> </span>:<span class="o">=</span><span class="w"> </span>/usr/local/cuda-8.0
+
+PYTHON_INCLUDE<span class="w"> </span>:<span class="o">=</span><span class="w"> </span>/usr/include/python2.7<span class="w"> </span>/usr/lib/python2.7/dist-packages/numpy/core/include
+WITH_PYTHON_LAYER<span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="m">1</span>
+INCLUDE_DIRS<span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="k">$(</span>PYTHON_INCLUDE<span class="k">)</span><span class="w"> </span>/usr/local/include<span class="w"> </span>/usr/include/hdf5/serial
+LIBRARY_DIRS<span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="k">$(</span>PYTHON_LIB<span class="k">)</span><span class="w"> </span>/usr/local/lib<span class="w"> </span>/usr/lib<span class="w"> </span>/usr/lib/x86_64-linux-gnu<span class="w"> </span>/usr/lib/x86_64-linux-gnu/hdf5/serial
+</pre></div>
+
+<p>Somtimes, the PYTHON_INCLUDE may differ in some systems check for the presence of numpy core files</p>
+<div class="code"><pre class="code literal-block">PYTHON_INCLUDE<span class="w"> </span>:<span class="o">=</span><span class="w"> </span>/usr/include/python2.7<span class="w"> </span>/usr/local/lib/python2.7/dist-packages/numpy/core/include<span class="w">  </span>
+WITH_PYTHON_LAYER<span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="w">  </span>
+INCLUDE_DIRS<span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="k">$(</span>PYTHON_INCLUDE<span class="k">)</span><span class="w"> </span>/usr/local/include<span class="w"> </span>/usr/include/hdf5/serial<span class="w">  </span>
+LIBRARY_DIRS<span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="k">$(</span>PYTHON_LIB<span class="k">)</span><span class="w"> </span>/usr/local/lib<span class="w"> </span>/usr/lib<span class="w"> </span>/usr/lib/x86_64-linux-gnu<span class="w"> </span>/usr/lib/x86_64-linux-gnu/hdf5/serial
+</pre></div>
+
+<p>Now, edit Makefile ( above we edited Makefile.config)</p>
+<div class="code"><pre class="code literal-block"><span class="nb">cd</span><span class="w"> </span>~/caffe
+sudo<span class="w"> </span>vim<span class="w"> </span>Makefile
+
+Change
+<span class="nv">NVCCFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-ccbin<span class="o">=</span><span class="k">$(</span>CXX<span class="k">)</span><span class="w"> </span>-Xcompiler<span class="w"> </span>-fPIC<span class="w"> </span><span class="k">$(</span>COMMON_FLAGS<span class="k">)</span>
+to
+<span class="nv">NVCCFLAGS</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>-D_FORCE_INLINES<span class="w"> </span>-ccbin<span class="o">=</span><span class="k">$(</span>CXX<span class="k">)</span><span class="w"> </span>-Xcompiler<span class="w"> </span>-fPIC<span class="w"> </span><span class="k">$(</span>COMMON_FLAGS<span class="k">)</span>
+</pre></div>
+
+<p>Install some python requirements with pip</p>
+<div class="code"><pre class="code literal-block"><span class="nb">cd</span><span class="w"> </span>~/caffe/python
+<span class="k">for</span><span class="w"> </span>req<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>cat<span class="w"> </span>requirements.txt<span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>sudo<span class="w"> </span>-H<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">$req</span><span class="w"> </span>--upgrade<span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</pre></div>
+
+<p>It's time to check make and check caffe's installation</p>
+<div class="code"><pre class="code literal-block"><span class="nb">cd</span><span class="w"> </span>~/caffe
+make<span class="w"> </span>all<span class="w"> </span>-j<span class="w"> </span><span class="k">$(($(</span>nproc<span class="k">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="k">))</span>
+make<span class="w"> </span><span class="nb">test</span>
+make<span class="w"> </span>runtest
+
+make<span class="w"> </span>pycaffe
+make<span class="w"> </span>distribute
+
+sudo<span class="w"> </span>vim<span class="w"> </span>~/.bashrc
+add<span class="w"> </span>the<span class="w"> </span>follwing<span class="w"> </span>line<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>file
+<span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONPATH</span><span class="o">=</span>~/caffe/python:<span class="nv">$PYTHONPATH</span>
+<span class="nb">source</span><span class="w"> </span>~/.bashrc
+</pre></div>
+
+<p>Verify your installation with (for python2.7)</p>
+<div class="code"><pre class="code literal-block"><span class="n">python</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">caffe</span>
+</pre></div>
+
+<p>Now, Deep Learning setup all ready for running. Get Going!</p>
+<hr>
+<h3 id="subscribe">Subscribe!</h3>
+<p>If you find the above content helpful/interesting and wish to read more such articles, then do <em><strong>subscribe</strong></em> to <a href="https://randomproduct8.substack.com/"><strong>Random Product</strong></a> to <strong>never miss an update.</strong></p>
+<p><strong>PS:</strong> Don’t hesitate to comment or leave a <strong><a href="https://twitter.com/randomproduct8">message</a></strong></p>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../../../../../categories/code/" style="padding: 0.4em;font-size: 90%;" rel="tag">code</a></li>
+            <li><a class="tag p-category" href="../../../../../../categories/deep-learning/" style="padding: 0.4em;font-size: 90%;" rel="tag">deep-learning</a></li>
+            <li><a class="tag p-category" href="../../../../../../categories/installation/" style="padding: 0.4em;font-size: 90%;" rel="tag">installation</a></li>
+            <li><a class="tag p-category" href="../../../../../../categories/system-maintenance/" style="padding: 0.4em;font-size: 90%;" rel="tag">system-maintenance</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a class="btn btn-secondary" href="../../System%20Maintenance/audio-drivers-installation/" rel="prev" title="Audio Drivers Installion">Previous Post</a>
+            </li>
+            <li class="next">
+                <a class="btn btn-secondary" href="../../../../Proof/Economics/asymptotic-sequential-learning/" rel="next" title="Asymptotic Sequential Learning.">Next Post</a>
+            </li>
+        </ul>
+<br></nav></aside><section class="comments hidden-print"><h2>Discussions</h2>
+        
+    
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="random8dots",
+            disqus_url="https://kargilsubbu8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/",
+        disqus_title="Deep learning Setup",
+        disqus_identifier="cache/posts/Substack/Product/Code/System Maintenance/Deep Learning Setup.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section></article><script>var disqus_shortname="random8dots";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer"><div class="container">
+        <div class="row">
+            <div class="col-md-6" style="padding-left: 0;">
+            <p style="margin-bottom: 0.5rem;">Contents © <a href="mailto:kargilsubbu8@gmail.com">Random Dots</a></p>
+            <a href="https://twitter.com/randomdots8?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-screen-name="false" data-show-count="false">Follow @randomdots8</a>
+            <a class="github-button" href="https://github.com/randomdots8" data-size="large" aria-label="Follow @randomdots8 on GitHub">Follow</a>
+            </div>
+            <div class="col-md-6" style="text-align: end; align-self: right; padding-right: 0; padding-top: 8px;">
+            <div style="float: right;" class="g-ytsubscribe" data-channelid="UCHOBOFarLb8fialW4P7xzaw" data-layout="full" data-count="default"></div>
+            </div>
+        </div>
+    </div> 
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../../../../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><script async defer src="https://buttons.github.io/buttons.js"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5bd5b9170c76cff6"></script><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><script src="https://apis.google.com/js/platform.js"></script>
+</body>
+</html>

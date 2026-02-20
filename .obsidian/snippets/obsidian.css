@@ -1,0 +1,23 @@
+.theme-light
+{
+  --text-highlight-bg: #b4ff0066;
+  --background-tag: #b5b5b5;
+  --text-nav-selected: rgb(255, 255, 255);
+
+}
+
+.theme-dark {
+  --text-highlight-bg: #c7f66187;
+  --background-tag: rgb(111, 112, 116);
+  --text-nav-selected: rgb(255, 255, 255);
+}
+
+
+a.tag {
+  background-color: var(--background-tag);
+  color: var(--text-nav-selected);
+  padding-bottom: 2px;
+  padding-top: 2px;
+  text-decoration: none;
+  font-size: 0.9em;
+}

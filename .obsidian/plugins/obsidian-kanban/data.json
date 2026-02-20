@@ -1,0 +1,8 @@
+{
+  "new-note-template": "007 - Extras/Templates/Kanban Notes.md",
+  "new-note-folder": "007 - Extras/Kanban",
+  "prepend-archive-date": true,
+  "hide-date-in-title": false,
+  "show-relative-date": true,
+  "date-display-format": "Do MMM YYYY"
+}

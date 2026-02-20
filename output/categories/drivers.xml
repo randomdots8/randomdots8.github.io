@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>#randomdots (Posts related to drivers)</title><link>https://kargilsubbu8.github.io/</link><description></description><atom:link href="https://kargilsubbu8.github.io/categories/drivers.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:kargilsubbu8@gmail.com"&gt;Random Dots&lt;/a&gt; 
+&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
+&lt;img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 20 Feb 2026 10:49:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Audio Drivers Installion</title><link>https://kargilsubbu8.github.io/posts/Substack/Product/Code/System%20Maintenance/audio-drivers-installation/</link><dc:creator>Random Dots</dc:creator><description>&lt;blockquote&gt;
+&lt;p&gt;Repairing (installation) Audio Drivers of Debian PC&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img alt="" src="https://kargilsubbu8.github.io/images/Audio%20Drivers%20Installation.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;To support my freshly built PC, 4.11 kernel version for Realtek-ALC1220 was needed to support its audio. So, if you too are building your own new PC like me then this might help you as a  temporary fix. 
+Uninstall your alsa-base and reinstall latest version it should work fine.&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;remove&lt;span class="w"&gt; &lt;/span&gt;alsa-base
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now go to http://www.stchman.com/tools/alsa/alsa_setup.sh and download the script and then do&lt;/p&gt;
+&lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;./alsa_setup.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This will reinstall the lastest driver in your system and reboots it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Precaution:&lt;/strong&gt;  If you are having a Hybrid Graphics (Intel + Nvidia) then it is suggested to modify alsa-base when you are on Intel HD Graphics. Because this driver supports primarily Intel HDA versions. If you try to install while you are on NVIDIA graphics it might cause many failures.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="subscribe"&gt;Subscribe!&lt;/h3&gt;
+&lt;p&gt;If you find the above content helpful/interesting and wish to read more such articles, then do &lt;em&gt;&lt;strong&gt;subscribe&lt;/strong&gt;&lt;/em&gt; to &lt;a href="https://randomproduct8.substack.com/"&gt;&lt;strong&gt;Random Product&lt;/strong&gt;&lt;/a&gt; to &lt;strong&gt;never miss an update.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PS:&lt;/strong&gt; Don’t hesitate to comment or leave a &lt;strong&gt;&lt;a href="https://twitter.com/randomproduct8"&gt;message&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</description><category>code</category><category>drivers</category><category>installation</category><category>system-maintenance</category><guid>https://kargilsubbu8.github.io/posts/Substack/Product/Code/System%20Maintenance/audio-drivers-installation/</guid><pubDate>Fri, 17 Nov 2017 05:36:00 GMT</pubDate></item></channel></rss>
