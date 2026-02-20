@@ -1,0 +1,300 @@
+@charset "UTF-8";
+
+/* Import ET Book styles
+   adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */
+
+@font-face {
+    font-family: "et-book";
+    src: url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot");
+    src: url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.ttf") format("truetype"), url("et-book/et-book-roman-line-figures/et-book-roman-line-figures.svg#etbookromanosf") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "et-book";
+    src: url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot");
+    src: url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff") format("woff"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.ttf") format("truetype"), url("et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.svg#etbookromanosf") format("svg");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "et-book";
+    src: url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot");
+    src: url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff") format("woff"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.ttf") format("truetype"), url("et-book/et-book-bold-line-figures/et-book-bold-line-figures.svg#etbookromanosf") format("svg");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "et-book-roman-old-style";
+    src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot");
+    src: url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot?#iefix") format("embedded-opentype"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.ttf") format("truetype"), url("et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.svg#etbookromanosf") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    font-size: 16px;
+}
+
+body{
+  /*color: #1a1a1a;*/
+  color: #424242;
+  font-weight: 400;
+  font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  /*font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;*/
+  font-size: 1.1rem;
+  }
+
+.list-inline-item {
+  display: inline-block; }
+  .list-inline-item:not(:last-child) {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem; }
+
+a {
+     color: #b1180f;
+  /*color: #8E1B14;*/
+  font-weight: inherit;
+  background-color: transparent; }
+  a:hover {
+    color: #3578E5;
+  }
+
+.verticalimage {
+  display: block;
+  margin: auto;
+  max-height: 500px;
+  width: auto;
+}
+
+
+.horizontalimage {
+  display: block;
+  margin: auto;
+  max-width: 500px;
+  height: auto;
+}
+
+.pagecentre {
+margin: auto; 
+/*margin-left: 1%;*/
+/*margin-right: 1%;*/
+max-width: 760px;
+/*padding-top: 0.75rem;*/
+/*padding-bottom: 0.5rem;*/
+
+}
+
+.centred {
+  margin: auto;
+  display: block;
+}
+
+.headscolor {
+	background-color: white;
+}
+
+.headsborder {
+	/*border-style: solid;*/
+	/*padding: 2rem;*/
+	border-top-style: none;
+  border-bottom-style: none;
+  /*border-top-left-radius: 0.5rem;*/
+  /*border-top-right-radius: 0.5rem;*/
+}
+
+.headingborder {
+  border-style: none;
+  /*border-bottom-style: solid;*/
+  padding-bottom: 0.5rem;
+
+}
+
+.dotscolor {
+	background-color: white;
+}
+
+.dotsborder {
+	/*border-style: solid;*/
+	border-top-style: none;
+	/*border-bottom-style: none;*/
+	padding: 0.5rem;
+	padding-bottom: 0rem;
+	/*border-bottom-left-radius: 0.5rem;*/
+	/*border-bottom-right-radius: 0.5rem;*/
+}
+
+.bg-light {
+  background-color: white !important;
+}
+
+.toc {
+  background-color: #fffbf0;
+}
+
+h1, .h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+   color: #b1180f;
+  /*color: #8E1B14;*/
+}
+
+h2, .h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #202020;
+  color: #b1180f;
+  /*color: #8E1B14;*/
+/*  text-decoration: underline;
+*/}
+
+h3, .h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  /*color: #3578E5;*/
+  color: #202020;
+  color: #b1180f;
+  /*color: #8E1B14;*/
+  /*text-decoration: underline;*/
+}
+
+h4, .h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  /*color: seagreen;*/
+  /*color: #202020;*/
+   color: #b1180f;
+  /*color: #8E1B14;*/
+/*  text-decoration: underline;
+*/}
+
+h5, .h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #202020;
+}
+
+
+#footer{
+	border-top-style: solid;
+	border-width: 2px;
+	border-color: black;
+	padding-top: 0.75rem;
+}
+
+.nav-link {
+	font-size: 1.6rem;
+}
+
+.navbar-light .navbar-brand {
+	font-size: 2.4rem;
+	font-weight: 600;
+	/*color: #3578E5;*/
+	color: black;
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+  color: rgba(0, 0, 0, 1);
+  font-weight: 600; }
+
+.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
+    color: #000000;
+    font-weight: 600;}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #bf1818;
+  background-color: #fff;
+  border: 1px solid black; }
+  .page-link:hover {
+    z-index: 2;
+    color: #7b0f0f;
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: black; }
+  .page-link:focus {
+    z-index: 2;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(191, 24, 24, 0.25); }
+
+.page-item:first-child .page-link {
+  margin-left: 0;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem; }
+
+.page-item:last-child .page-link {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem; }
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #bf1818;
+  border-color: #bf1818; }
+
+.page-item.disabled .page-link {
+  color: #868e96;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #fff;
+  border-color: black; }
+
+.pagination-lg .page-link {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.5; }
+
+.pagination-lg .page-item:first-child .page-link {
+  border-top-left-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem; }
+
+.pagination-lg .page-item:last-child .page-link {
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem; }
+
+.pagination-sm .page-link {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5; }
+
+.pagination-sm .page-item:first-child .page-link {
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem; }
+
+.pagination-sm .page-item:last-child .page-link {
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem; }
+
+#customize-list{
+  float:left;
+  margin-left:20px;
+  list-style:none;
+}
+
+.navbar {
+  padding: 0.85rem 1rem; }
+
+.badge {
+	padding: 0.4rem;
+	font-size: 90%;
+}
+
+.tag {
+	padding: 0.4rem;
+	font-size: 90%;
+}
+
