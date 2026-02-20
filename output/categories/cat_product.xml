@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>#randomdots (Posts related to product)</title><link>https://kargilsubbu8.github.io/</link><description></description><atom:link href="https://kargilsubbu8.github.io/categories/cat_product.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:kargilsubbu8@gmail.com"&gt;Random Dots&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>#randomdots (Posts related to product)</title><link>https://randomdots8.github.io/</link><description></description><atom:link href="https://randomdots8.github.io/categories/cat_product.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:randomdots8@gmail.com"&gt;Random Dots&lt;/a&gt; 
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 20 Feb 2026 10:49:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Deep learning Setup</title><link>https://kargilsubbu8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/</link><dc:creator>Random Dots</dc:creator><description>&lt;blockquote&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 20 Feb 2026 13:23:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Deep learning Setup</title><link>https://randomdots8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/</link><dc:creator>Random Dots</dc:creator><description>&lt;blockquote&gt;
 &lt;p&gt;Installing tools for NVIDIA GPU &amp;amp; creating a Deeplearing Setup (caffe)&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="" src="https://kargilsubbu8.github.io/images/Deep%20Learning%20Setup.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://randomdots8.github.io/images/Deep%20Learning%20Setup.png"&gt;&lt;/p&gt;
 &lt;h5&gt;Table of Contents&lt;/h5&gt;
 &lt;div class="toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://kargilsubbu8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/#1-specifications"&gt;1. Specifications&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://kargilsubbu8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/#2-disabling-nouveau-driver"&gt;2. Disabling "nouveau" driver&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://kargilsubbu8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/#3-working-setup-using-bumblebee-primus-for-intelnvidia-gpu"&gt;3. Working setup using bumblebee &amp;amp; primus for Intel+Nvidia GPU&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://kargilsubbu8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/#4-installation-of-cuda-80-and-verification"&gt;4. Installation of CUDA-8.0 and verification&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://kargilsubbu8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/#5-installation-of-cudnn"&gt;5. Installation of CUDNN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://kargilsubbu8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/#6-installing-opencv32-just-enough-for-working-with-caffe"&gt;6. Installing OpenCV3.2 (just enough for working with caffe)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://kargilsubbu8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/#7-installing-caffe-with-opencv3-gpu-cudacudnn"&gt;7. Installing Caffe with OpenCV3 &amp;amp; GPU (CUDA+cuDNN)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://kargilsubbu8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/#subscribe"&gt;Subscribe!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://randomdots8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/#1-specifications"&gt;1. Specifications&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://randomdots8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/#2-disabling-nouveau-driver"&gt;2. Disabling "nouveau" driver&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://randomdots8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/#3-working-setup-using-bumblebee-primus-for-intelnvidia-gpu"&gt;3. Working setup using bumblebee &amp;amp; primus for Intel+Nvidia GPU&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://randomdots8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/#4-installation-of-cuda-80-and-verification"&gt;4. Installation of CUDA-8.0 and verification&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://randomdots8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/#5-installation-of-cudnn"&gt;5. Installation of CUDNN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://randomdots8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/#6-installing-opencv32-just-enough-for-working-with-caffe"&gt;6. Installing OpenCV3.2 (just enough for working with caffe)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://randomdots8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/#7-installing-caffe-with-opencv3-gpu-cudacudnn"&gt;7. Installing Caffe with OpenCV3 &amp;amp; GPU (CUDA+cuDNN)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://randomdots8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/#subscribe"&gt;Subscribe!&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;h3 id="1-specifications"&gt;1. Specifications&lt;/h3&gt;
@@ -350,10 +350,10 @@ add&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;fo
 &lt;hr&gt;
 &lt;h3 id="subscribe"&gt;Subscribe!&lt;/h3&gt;
 &lt;p&gt;If you find the above content helpful/interesting and wish to read more such articles, then do &lt;em&gt;&lt;strong&gt;subscribe&lt;/strong&gt;&lt;/em&gt; to &lt;a href="https://randomproduct8.substack.com/"&gt;&lt;strong&gt;Random Product&lt;/strong&gt;&lt;/a&gt; to &lt;strong&gt;never miss an update.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;PS:&lt;/strong&gt; Don’t hesitate to comment or leave a &lt;strong&gt;&lt;a href="https://twitter.com/randomproduct8"&gt;message&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</description><category>code</category><category>deep-learning</category><category>installation</category><category>system-maintenance</category><guid>https://kargilsubbu8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/</guid><pubDate>Thu, 23 Nov 2017 01:54:00 GMT</pubDate></item><item><title>Audio Drivers Installion</title><link>https://kargilsubbu8.github.io/posts/Substack/Product/Code/System%20Maintenance/audio-drivers-installation/</link><dc:creator>Random Dots</dc:creator><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;PS:&lt;/strong&gt; Don’t hesitate to comment or leave a &lt;strong&gt;&lt;a href="https://twitter.com/randomproduct8"&gt;message&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</description><category>code</category><category>deep-learning</category><category>installation</category><category>system-maintenance</category><guid>https://randomdots8.github.io/posts/Substack/Product/Code/System%20Maintenance/deep-learning-setup/</guid><pubDate>Thu, 23 Nov 2017 01:54:00 GMT</pubDate></item><item><title>Audio Drivers Installion</title><link>https://randomdots8.github.io/posts/Substack/Product/Code/System%20Maintenance/audio-drivers-installation/</link><dc:creator>Random Dots</dc:creator><description>&lt;blockquote&gt;
 &lt;p&gt;Repairing (installation) Audio Drivers of Debian PC&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="" src="https://kargilsubbu8.github.io/images/Audio%20Drivers%20Installation.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://randomdots8.github.io/images/Audio%20Drivers%20Installation.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;To support my freshly built PC, 4.11 kernel version for Realtek-ALC1220 was needed to support its audio. So, if you too are building your own new PC like me then this might help you as a  temporary fix. 
 Uninstall your alsa-base and reinstall latest version it should work fine.&lt;/p&gt;
 &lt;div class="code"&gt;&lt;pre class="code literal-block"&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;remove&lt;span class="w"&gt; &lt;/span&gt;alsa-base
@@ -368,4 +368,4 @@ Uninstall your alsa-base and reinstall latest version it should work fine.&lt;/p
 &lt;hr&gt;
 &lt;h3 id="subscribe"&gt;Subscribe!&lt;/h3&gt;
 &lt;p&gt;If you find the above content helpful/interesting and wish to read more such articles, then do &lt;em&gt;&lt;strong&gt;subscribe&lt;/strong&gt;&lt;/em&gt; to &lt;a href="https://randomproduct8.substack.com/"&gt;&lt;strong&gt;Random Product&lt;/strong&gt;&lt;/a&gt; to &lt;strong&gt;never miss an update.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;PS:&lt;/strong&gt; Don’t hesitate to comment or leave a &lt;strong&gt;&lt;a href="https://twitter.com/randomproduct8"&gt;message&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</description><category>code</category><category>drivers</category><category>installation</category><category>system-maintenance</category><guid>https://kargilsubbu8.github.io/posts/Substack/Product/Code/System%20Maintenance/audio-drivers-installation/</guid><pubDate>Fri, 17 Nov 2017 05:36:00 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;strong&gt;PS:&lt;/strong&gt; Don’t hesitate to comment or leave a &lt;strong&gt;&lt;a href="https://twitter.com/randomproduct8"&gt;message&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</description><category>code</category><category>drivers</category><category>installation</category><category>system-maintenance</category><guid>https://randomdots8.github.io/posts/Substack/Product/Code/System%20Maintenance/audio-drivers-installation/</guid><pubDate>Fri, 17 Nov 2017 05:36:00 GMT</pubDate></item></channel></rss>
